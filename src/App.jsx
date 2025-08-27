@@ -1,28 +1,27 @@
-import { useState } from 'react'
+import React from 'react'
+import Header from './components/Header'
+import Hero from './components/Hero'
+import Projects from './components/Projects'
+import Footer from './components/Footer'
 
-function App() {
-  const [count, setCount] = useState(0)
-
+export default function App() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 to-blue-50 flex items-center justify-center">
-      <div className="bg-white p-8 rounded-lg shadow-lg">
-        <h1 className="text-3xl font-bold text-gray-800 mb-4">
-          Vibe Coding Platform
-        </h1>
-        <p className="text-gray-600 mb-6">
-          Your AI-powered development environment
-        </p>
-        <div className="text-center">
-          <button
-            onClick={() => setCount(count + 1)}
-            className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded"
-          >
-            Count is {count}
-          </button>
-        </div>
+    <div className="min-h-screen bg-[#FCF7E6] text-zinc-900 selection:bg-black selection:text-white">
+      {/* Background accents */}
+      <div className="fixed inset-0 -z-10 pointer-events-none">
+        <div className="absolute -top-10 -right-8 w-56 h-56 rotate-6 bg-[#FFD166] border-4 border-black rounded-[22px] shadow-[8px_8px_0_0_#000] opacity-60" />
+        <div className="absolute top-40 -left-8 w-40 h-40 -rotate-6 bg-[#A7F3D0] border-4 border-black rounded-[22px] shadow-[8px_8px_0_0_#000] opacity-60" />
+        <div className="absolute bottom-10 right-10 w-32 h-32 rotate-12 bg-[#C4B5FD] border-4 border-black rounded-[12px] shadow-[8px_8px_0_0_#000] opacity-60" />
       </div>
+
+      <Header />
+
+      <main className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <Hero />
+        <Projects />
+      </main>
+
+      <Footer />
     </div>
   )
 }
-
-export default App
